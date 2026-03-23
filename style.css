@@ -1,0 +1,393 @@
+/* --- Global Variables & Reset --- */
+:root {
+    --primary-teal: #008080;
+    --accent-gold: #c5a059;
+    --dark-grey: #333333;
+    --light-bg: #f9f9f9;
+    --white: #ffffff;
+    
+    /* Future Essentials Theme */
+    --future-bg: #0b1426; 
+    --future-text: #ffffff;
+    --future-p: #a0aec0; 
+    --future-card-bg: rgba(255, 255, 255, 0.05); 
+    
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-grey);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+header {
+    background: var(--white);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--primary-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-teal);
+}
+
+/* --- Hero Section / About Us --- */
+#about-us {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    align-items: center;
+    gap: 4rem;
+    background: linear-gradient(to right, #ffffff, #f4fafa);
+    min-height: auto; 
+}
+
+.sub-heading {
+    color: var(--accent-gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#about-us h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--dark-grey);
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 500px;
+}
+
+.hero-image-container {
+    width: 100%;
+    height: auto; 
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    object-fit: contain; 
+}
+
+/* --- Global Collections & Product Grid --- */
+#global-collections {
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--dark-grey);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-soft);
+}
+
+.product-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #f8f8f8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-teal);
+    margin-bottom: 1.5rem;
+}
+
+button {
+    background-color: var(--primary-teal);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* --- Future Essentials (With Rocket Icon Watermark) --- */
+#future-essentials {
+    background-color: var(--future-bg);
+    color: var(--future-text);
+    padding: 100px 5%;
+    border-radius: 40px; 
+    margin: 60px 5%; 
+    position: relative;
+    overflow: hidden; 
+}
+
+#future-essentials h2 {
+    font-size: 3rem;
+    color: var(--future-text);
+    text-align: left; 
+    margin-bottom: 1.5rem;
+}
+
+#future-essentials p {
+    color: var(--future-p);
+    text-align: left;
+    max-width: 600px;
+    margin-bottom: 4rem;
+}
+
+.essentials-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    position: relative;
+    z-index: 2;
+}
+
+.essentials-list li {
+    background: var(--future-card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Professional Rocket Watermark */
+#future-essentials::after {
+    content: 'rocket_launch'; 
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    right: -20px;
+    bottom: -40px;
+    font-size: 25rem;
+    color: var(--white);
+    opacity: 0.04;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- Logistics Section (Fixed to One Row) --- */
+#logistics {
+    padding: 80px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: flex; /* Force into a row on desktop */
+    justify-content: space-between;
+    gap: 3rem;
+    list-style: none;
+}
+
+.feature {
+    flex: 1; /* Ensures equal width */
+    text-align: left;
+}
+
+.feature .icon-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Logistics Icon Colors */
+.feature:nth-child(1) .icon-box { background: #f1f8fc; color: #4c637a; }
+.feature:nth-child(2) .icon-box { background: #f1f9f2; color: #558763; }
+.feature:nth-child(3) .icon-box { background: #fbf5f2; color: #9c6c5a; }
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-grey);
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 320px;
+}
+
+/* --- Contact & Footer --- */
+#contact {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-details a {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer {
+    background: #111;
+    color: #888;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.footer-nav nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+    #about-us {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-image-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Responsive Logistics: Stacks on small screens */
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature {
+        margin-bottom: 3rem;
+    }
+
+    .feature p {
+        margin: 0 auto;
+    }
+
+    nav ul {
+        display: none;
+    }
+    
+    #future-essentials h2 {
+        font-size: 2.2rem;
+    }
+
+    #future-essentials::after {
+        font-size: 15rem;
+    }
+}
