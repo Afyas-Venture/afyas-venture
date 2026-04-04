@@ -186,7 +186,7 @@ nav ul li a:hover {
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     gap: 2rem;
     text-align: center;
 }
