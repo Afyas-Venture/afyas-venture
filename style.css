@@ -143,7 +143,8 @@ nav ul li a:hover {
 #about-us p {
     font-size: 1.1rem;
     color: #555;
-    max-width: 500px;
+    max-width: 800px;
+    text-align: center;
 }
 
 .hero-image-container {
@@ -185,7 +186,7 @@ nav ul li a:hover {
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     gap: 2rem;
     text-align: center;
 }
