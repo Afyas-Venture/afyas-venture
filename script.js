@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Configuration: ONLY numbers, no + or 00
-    const businessNumber = "923451004420"; 
+    
+    const businessNumber = "923469160100"; 
 
     // 2. Select all order buttons
     const orderButtons = document.querySelectorAll('.product-card button');
