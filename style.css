@@ -366,7 +366,7 @@ h2 {
 
 /* When the radio is checked, change the label style */
 .size-selector label:has(input:checked) {
-    background: #25D366; /* WhatsApp Green */
+    background: #06b6b6; /* WhatsApp Green */
     border-color: #128C7E;
     color: white;
 }
