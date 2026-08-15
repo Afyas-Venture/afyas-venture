@@ -352,6 +352,7 @@ nav ul li a:hover {
 
 #about-us header{
     z-index: 1;
+    position: static;
 }
 
 .hero-image-container {
