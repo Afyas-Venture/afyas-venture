@@ -33,6 +33,82 @@ body {
     background-color: var(--white);
     overflow-x: hidden;
 }
+
+/* HAMBURGER BUTTON (Hidden on Desktop) */
+.hamburger-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--dark-grey);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* HAMBURGER ANIMATION TO 'X' WHEN OPEN */
+.hamburger-toggle.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-toggle.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* RESPONSIVE NAVIGATION (Mobile & Tablets) */
+@media screen and (max-width: 768px) {
+  .hamburger-toggle {
+    display: flex;
+  }
+
+  /* Slide-down mobile menu */
+  nav[aria-label="Main Navigation"] #nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* CRITICAL FIXES FOR STACKING AND OVERFLOW */
+    z-index: 1000;          /* Places menu above all page content */
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.35s ease-in-out, padding 0.35s ease-in-out, visibility 0.35s;
+  }
+
+  /* Expanded state */
+  nav[aria-label="Main Navigation"] #nav-menu.open {
+    max-height: 500px;      /* Increased height to fit all links */
+    padding: 20px 0;
+    visibility: visible;
+  }
+
+  header {
+    position: relative;
+    z-index: 1111;          /* Ensures header container stays on top */
+  }
+}
+
 /* CART TRIGGER BUTTON */
 #cart-toggle {
   position: fixed;
@@ -167,7 +243,7 @@ header {
     padding: 1rem 5%;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 888;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
@@ -272,6 +348,10 @@ nav ul li a:hover {
     color: #555;
     max-width: 800px;
     text-align: center;
+}
+
+#about-us header{
+    z-index: 1;
 }
 
 .hero-image-container {
@@ -715,10 +795,6 @@ footer {
 
     .feature p {
         margin: 0 auto;
-    }
-
-    nav ul {
-        display: none;
     }
     
     #future-essentials h2 {

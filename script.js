@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cartDrawer.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
   }
 
-  cartToggleBtn.addEventListener('click', toggleCart);
-  closeCartBtn.addEventListener('click', toggleCart);
+  if (cartToggleBtn) cartToggleBtn.addEventListener('click', toggleCart);
+  if (closeCartBtn) closeCartBtn.addEventListener('click', toggleCart);
 
   // Add Item to Cart
   document.querySelectorAll('.add-to-cart-btn').forEach(button => {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       saveAndRender();
-      if (cartDrawer.classList.contains('condensed')) {
+      if (cartDrawer && cartDrawer.classList.contains('condensed')) {
         toggleCart();
       }
     });
@@ -65,15 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Render Cart UI
   function renderCart() {
+    if (!cartItemsContainer) return;
     cartItemsContainer.innerHTML = '';
     let totalItems = 0;
     let totalPrice = 0;
 
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = '<p class="empty-cart-msg">Your cart is empty.</p>';
-      checkoutBtn.disabled = true;
+      if (checkoutBtn) checkoutBtn.disabled = true;
     } else {
-      checkoutBtn.disabled = false;
+      if (checkoutBtn) checkoutBtn.disabled = false;
       cart.forEach((item) => {
         totalItems += item.qty;
         totalPrice += item.price * item.qty;
@@ -96,59 +97,87 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    cartCountEl.innerText = totalItems;
-    cartTotalEl.innerText = `Rs. ${totalPrice}`;
+    if (cartCountEl) cartCountEl.innerText = totalItems;
+    if (cartTotalEl) cartTotalEl.innerText = `Rs. ${totalPrice}`;
   }
 
   // Handle Delegate Click Events inside Drawer
-  cartItemsContainer.addEventListener('click', (e) => {
-    const action = e.target.dataset.action;
-    const id = e.target.dataset.id;
-    if (!action || !id) return;
+  if (cartItemsContainer) {
+    cartItemsContainer.addEventListener('click', (e) => {
+      const action = e.target.dataset.action;
+      const id = e.target.dataset.id;
+      if (!action || !id) return;
 
-    const itemIndex = cart.findIndex(i => i.id === id);
-    if (itemIndex === -1) return;
+      const itemIndex = cart.findIndex(i => i.id === id);
+      if (itemIndex === -1) return;
 
-    if (action === 'increase') {
-      cart[itemIndex].qty += 1;
-    } else if (action === 'decrease') {
-      if (cart[itemIndex].qty > 1) {
-        cart[itemIndex].qty -= 1;
-      } else {
+      if (action === 'increase') {
+        cart[itemIndex].qty += 1;
+      } else if (action === 'decrease') {
+        if (cart[itemIndex].qty > 1) {
+          cart[itemIndex].qty -= 1;
+        } else {
+          cart.splice(itemIndex, 1);
+        }
+      } else if (action === 'remove') {
         cart.splice(itemIndex, 1);
       }
-    } else if (action === 'remove') {
-      cart.splice(itemIndex, 1);
-    }
 
-    saveAndRender();
-  });
+      saveAndRender();
+    });
+  }
 
   // Clear Cart
-  clearCartBtn.addEventListener('click', () => {
-    if (cart.length === 0) return;
-    cart = [];
-    saveAndRender();
-  });
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+      cart = [];
+      saveAndRender();
+    });
+  }
 
   // WhatsApp Checkout Trigger
-  checkoutBtn.addEventListener('click', () => {
-    if (cart.length === 0) return;
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
 
-    let orderList = "";
-    let grandTotal = 0;
+      let orderList = "";
+      let grandTotal = 0;
 
-    cart.forEach((item, index) => {
-      const subtotal = item.price * item.qty;
-      grandTotal += subtotal;
-      orderList += `${index + 1}. *${item.name}*\n   Size: ${item.size || 'N/A'}\n   Qty: ${item.qty} x Rs. ${item.price} = Rs. ${subtotal}\n\n`;
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.qty;
+        grandTotal += subtotal;
+        orderList += `${index + 1}. *${item.name}*\n   Size: ${item.size || 'N/A'}\n   Qty: ${item.qty} x Rs. ${item.price} = Rs. ${subtotal}\n\n`;
+      });
+
+      const message = `Hello AFYAS Ventures! 👋\n\nI would like to place an order:\n\n${orderList}*Grand Total:* Rs. ${grandTotal}\n\nPlease let me know the availability and delivery details. Thanks!`;
+
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${businessNumber}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
     });
-
-    const message = `Hello AFYAS Ventures! 👋\n\nI would like to place an order:\n\n${orderList}*Grand Total:* Rs. ${grandTotal}\n\nPlease let me know the availability and delivery details. Thanks!`;
-
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${businessNumber}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
-  });
+  }
 
   renderCart();
-});
+
+  // ==========================================
+  // HAMBURGER MENU TOGGLE LOGIC (PASTE HERE)
+  // ==========================================
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+}); // <--- DOMContentLoaded ends here
