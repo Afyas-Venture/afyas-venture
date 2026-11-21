@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link class="image-tag" type="image/png" href="logo.jpg">
+  <title>AFYAS Ventures | Home Essentials</title>
+
+  <meta name="description"
+    content="Discover Shampoo, Handwash, Bleach, Washing Powder etc Order via WhatsApp today.">
+  <meta name="keywords"
+    content="AFYAS Ventures, Shampoo, Handwash, Bleach, Washing Powder etc">
+  <link rel="canonical" href="https://afyas-venture.github.io/afyas-venture/">
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Be_Vietnam_Pro:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+  <!-- Open Graph / Social Media Preview Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://afyas-venture.github.io/afyas-venture/">
+  <meta property="og:title" content="AFYAS Ventures | Home Essentials">
+  <meta property="og:description"
+    content="Discover Home Essentials from AFYAS Ventures. Order via WhatsApp today.">
+  <meta property="og:image" content="https://afyas-venture.github.io/afyas-venture/logo.jpg">
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Main Navigation">
+      <div class="logo-container">
+        <img src="logo.jpg" alt="AFYAS Ventures Logo" class="nav-logo">
+        <span class="brand-name">AFYAS Ventures</span>
+      </div>
+      <!-- ADD THIS HAMBURGER BUTTON -->
+      <button id="hamburger-btn" class="hamburger-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- ADD id="nav-menu" TO YOUR EXISTING <ul> -->
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#global-collections">Products</a></li>
+        <li><a href="baby_care.html">Baby Care</a></li>
+        <li><a href="skin_care.html">SkinCare</a></li>
+        <li><a href="fragrances.html">Fragrances</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- CART FLOATING TRIGGER & DRAWER -->
+    <button id="cart-toggle" aria-label="Open Shopping Cart">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+
+    <aside id="cart-drawer" class="cart-drawer condensed" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button id="clear-cart-btn">Clear All</button>
+        <button id="close-cart-btn" aria-label="Close Cart">&#10142</button>
+      </div>
+
+      <div id="cart-items" class="cart-items-list">
+        <p class="empty-cart-msg">Your cart is empty.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total:</span>
+          <span id="cart-total-price">Rs. 0</span>
+        </div>
+        <button id="whatsapp-checkout-btn" class="checkout-btn" disabled>Checkout via WhatsApp</button>
+      </div>
+    </aside>
+    <section id="about-us">
+      <header>
+        <span class="sub-heading">AFYAS VENTURES</span>
+        <!-- <p style="font-family: 'Times New Roman', Times, serif;">
+          CARE, WITHOUT COMPROMISE.
+          At AFYAS, we believe the essentials deserve exceptional standards. Our diapers and wipes are thoughtfully
+          selected with comfort, quality, and care at the heart of every choice.
+          And we stand behind what we offer. If there is a genuine problem with your purchase, your money is fully
+          protected. Even if you simply change your mind after receiving your order, you may return it — you only cover
+          the delivery charges.
+          Because when it comes to care, nothing should be ordinary — and your trust should never be at risk.
+        </p> -->
+      </header>
+      <div class="hero-image-container">
+        <!-- <img src="baby.png" alt="Happy newborn baby in premium AFYAS Ventures diaper" class="hero-img" /> -->
+      </div>
+    </section>
+
+    <div id="global-collections">
+      <section id="JABTCO-series">
+        <h2>JABTCO Series</h2>
+        <p class="product-features">
+          <!-- Engineered for maximum breathability and advanced absorbency. -->
+        </p>
+        <div class="product-grid">
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Shampoo-plus-Conditioner.jpg" alt="JABTCO Shampoo + Conditioner" />
+            </div>
+            <h3>JABTCO Shampoo + Conditione</h3>
+            <span class="price">Rs.<span class="price-amount"></span></span>
+
+            <div class="size-selector">
+              <p>Select:</p>
+              <div class="size-options">
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Onion" checked />
+                  Onion
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Egg" />
+                  Egg 
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="AntiDandruff" />
+                  AntiDandruff
+                </label>
+              </div>
+            </div>
+
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Handwash.jpg" alt="JABTCO Hand Wash" />
+            </div>
+            <h3>JABTCO Hand Wash 1000ml</h3>
+            <span class="price">Rs.<span class="price-amount">250</span></span>
+
+            <div class="size-selector">
+              <p>Select:</p>
+              <div class="size-options">
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Coconut" checked />
+                  Coconut
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Jasmine" />
+                  Jasmine 
+                </label>
+              </div>
+            </div>
+
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Body-Wash.jpg" alt="JABTCO Body Wash" />
+            </div>
+            <h3>JABTCO Body Wash</h3>
+            <span class="price">Rs.<span class="price-amount">300</span></span>
+
+            <div class="size-selector">
+              <p>Select:</p>
+              <div class="size-options">
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Sweet Lemon" checked />
+                  Sweet Lemon
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Coconut" />
+                  Coconut 
+                </label>
+              </div>
+            </div>
+
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Home-Appliances-Cleaner.jpg" alt="JABTCO Glass Cleaner" />
+            </div>
+            <h3>JABTCO Glass Cleaner 1000ml</h3>
+            <span class="price">Rs.<span class="price-amount">280</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Car-Wash.jpg" alt="JABTCO Car Wash Shampoo" />
+            </div>
+            <h3>JABTCO Car Wash Shampoo</h3>
+            <span class="price">Rs.<span class="price-amount">250</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Dishwashing-Liquid.jpg" alt="JABTCO Dishwashing Liquid" />
+            </div>
+            <h3>JABTCO Dishwashing Liquid 1L</h3>
+            <span class="price">Rs.<span class="price-amount">320</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Wood-Furniture-Polish-plus-Cleaner.jpg" alt="Furniture Polish" />
+            </div>
+            <h3>JABTCO Furniture Polish</h3>
+            <span class="price">Rs.<span class="price-amount">280</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Shoe-Polish-Spray.jpg" alt="JABTCO Shoe Polish Spray" />
+            </div>
+            <h3>JABTCO Shoe Polish Spray</h3>
+            <span class="price">Rs.<span class="price-amount">250</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Toilet-Cleaner.jpg" alt="JABTCO Toilet Cleaner" />
+            </div>
+            <h3>JABTCO Toilet Cleaner 750ml</h3>
+            <span class="price">Rs.<span class="price-amount">250</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Color-Bleach.jpg" alt="JABTCO Color Bleach" />
+            </div>
+            <h3>JABTCO Fabric Color Bleach 1L</h3>
+            <span class="price">Rs.<span class="price-amount">260</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Fabric-Conditioner.jpg" alt="JABTCO Fabric Conditioner" />
+            </div>
+            <h3>JABTCO Fabric Conditioner</h3>
+            <span class="price">Rs.<span class="price-amount">350</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Laundry-Detergent.jpg" alt="JABTCO Laundry Detergent" />
+            </div>
+            <h3>JABTCO Laundry Detergent 825g</h3>
+            <span class="price">Rs.<span class="price-amount">300</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Hand-Wash.jpg" alt="JABTCO Hand Wash" />
+            </div>
+            <h3>JABTCO Magical Hand Wash</h3>
+            <span class="price">Rs.<span class="price-amount">300</span></span>
+
+            <div class="size-selector">
+              <p>Select:</p>
+              <div class="size-options">
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Lemon" checked />
+                  Lemon
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Coconut" />
+                  Coconut 
+                </label>
+                <label>
+                  <input type="radio" name="size-dubai-diapers" value="Aloe Vera" />
+                  Aloe Vera 
+                </label>
+              </div>
+            </div>
+
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="jABTCO-Cleaner-&-Disinfectant.jpg" alt="JABTCO Cleaner & Disinfectant" />
+            </div>
+            <h3>JABTCO Cleaner & Disinfectant 4L makes it 8L</h3>
+            <span class="price">Rs.<span class="price-amount">300</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+          <article class="product-card" id="JABTCO">
+            <div class="product-image-wrapper">
+              <img src="JABTCO-Toilet-Cleaner-&-Drain-Opener.jpg" alt="JABTCO Toilet Cleaner & Drain Opener" />
+            </div>
+            <h3>JABTCO Toilet Cleaner & Drain Opener 2L</h3>
+            <span class="price">Rs.<span class="price-amount">300</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="london-series">
+        <h2>Renada Series</h2>
+        <p class="product-features">
+          <!-- Classic brand heritage meets modern dermatological standards. -->
+        </p>
+        <div class="product-grid">
+          <article class="product-card" id="Renada">
+            <div class="product-image-wrapper">
+              <img src="Renada-Bleach.jpg" alt="Renada Bleach" />
+            </div>
+            <h3>Fabric White Bleach 1L</h3>
+            <span class="price">Rs.<span class="price-amount">250</span></span>
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section id="future-essentials">
+      <h2>Future Essentials</h2>
+      <ul class="essentials-list">
+        <li>
+          <span class="material-symbols-outlined" aria-hidden="true">baby_changing_station</span>
+          <h3>Smart Feeders</h3>
+        </li>
+        <li>
+          <span class="material-symbols-outlined" aria-hidden="true">stroller</span>
+          <h3>Ergo Gear</h3>
+        </li>
+        <li>
+          <span class="material-symbols-outlined" aria-hidden="true">toys</span>
+          <h3>Developmental Toys</h3>
+        </li>
+      </ul>
+    </section>
+
+    <section id="logistics">
+      <div class="feature">
+        <span class="material-symbols-outlined" aria-hidden="true">public</span>
+        <h3>Global Logistics</h3>
+      </div>
+      <div class="feature">
+        <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+        <h3>Quality Inspected</h3>
+      </div>
+      <div class="feature">
+        <span class="material-symbols-outlined" aria-hidden="true">history</span>
+        <h3>Reliable Supply</h3>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-details">
+        <p>
+          <strong>Contact:</strong>
+          <a href="https://wa.me/923469160100" class="whatsapp-contact" target="_blank" rel="noopener noreferrer">
+            <img src="whatsapp.png" alt="WhatsApp" class="contact-icon" />
+            +92 346 9160100
+          </a>
+        </p>
+        <p><strong>Email:</strong> afyasventures@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-nav">
+      <span class="footer-logo">AFYAS Ventures</span>
+      <nav aria-label="Footer Navigation">
+        <a href="#dubai-series">Dubai Series</a>
+        <a href="#london-series">London Series</a>
+        <a href="#future-essentials">Future Essentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="social-icons">
+        <span class="material-symbols-outlined">language</span>
+        <span class="material-symbols-outlined">flight_takeoff</span>
+      </div>
+      <p>© 2024 AFYAS Ventures. International Baby Care Specialists.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

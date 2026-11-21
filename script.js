@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         itemEl.innerHTML = `
           <div class="cart-item-info">
             <strong>${sanitize(item.name)}</strong>
-            <div><small>${item.size ? `Size: ${sanitize(item.size)} | ` : ''}Rs. ${item.price}</small></div>
+            <div><small>${item.size ? `Option: ${sanitize(item.size)} | ` : ''}Rs. ${item.price}</small></div>
           </div>
           <div class="qty-controls">
             <button class="qty-btn" data-action="decrease" data-id="${sanitize(item.id)}">-</button>
@@ -159,9 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderCart();
 
-  // ==========================================
-  // HAMBURGER MENU TOGGLE LOGIC (PASTE HERE)
-  // ==========================================
+
+  // HAMBURGER MENU TOGGLE LOGIC 
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
 
